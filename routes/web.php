@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout/layout');
 });
-Route::resource('tasks', 'CitiesController');
-Route::resource('tasks', 'ClientController');
+
+Route::resource('cities', 'CitiesController');
+Route::resource('client', 'ClientController');

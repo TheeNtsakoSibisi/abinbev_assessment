@@ -15,6 +15,8 @@ class CitiesController extends Controller
     public function index()
     {
         //
+        $cities = Cities::all();
+        return view('cities.index',compact('cities',$cities));
     }
 
     /**
@@ -25,6 +27,7 @@ class CitiesController extends Controller
     public function create()
     {
         //
+        return view('cities.create');
     }
 
     /**
@@ -35,7 +38,13 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validate
+        $request->validate([
+            'name' => 'required|min:3',
+        ]);
+        
+        $city = Task::create(['name' => $request->name]);
+        return redirect('/cities/'.$city->id);
     }
 
     /**
@@ -47,6 +56,7 @@ class CitiesController extends Controller
     public function show(Cities $cities)
     {
         //
+        return view('cities.show',compact('cities',$cities));
     }
 
     /**
@@ -58,6 +68,7 @@ class CitiesController extends Controller
     public function edit(Cities $cities)
     {
         //
+        return view('cities.edit',compact('cities',$cities));
     }
 
     /**
@@ -70,6 +81,15 @@ class CitiesController extends Controller
     public function update(Request $request, Cities $cities)
     {
         //
+        //Validate
+        $request->validate([
+            'cities' => 'required|min:3',
+        ]);
+        
+        $cities->cities = $request->cities;
+        $cities->save();
+        $request->session()->flash('message', 'Successfully modified the cities!');
+        return redirect('cities');
     }
 
     /**
@@ -81,5 +101,8 @@ class CitiesController extends Controller
     public function destroy(Cities $cities)
     {
         //
+        $cities->delete();
+        $request->session()->flash('message', 'Successfully deleted the City!');
+        return redirect('cities');
     }
 }

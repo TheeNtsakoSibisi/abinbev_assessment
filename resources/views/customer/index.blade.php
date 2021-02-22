@@ -15,18 +15,18 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($tasks as $client)
+            @foreach($client ?? '' as $client ?? '')
             <tr>
-              <th scope="row">{{$client->id}}</th>
-              <td><a href="/tasks/{{$client->id}}">{{$client->name}}</a></td>
-              <td>{{$client->city_id}}</td>
-              <td>{{$client->created_at->toFormattedDateString()}}</td>
+              <th scope="row">{{$client ?? ''->id}}</th>
+              <td><a href="/client/{{$client ?? ''->id}}">{{$client ?? ''->name}}</a></td>
+              <td>{{$client ?? ''->city_id}}</td>
+              <td>{{$client ?? ''->created_at->toFormattedDateString()}}</td>
               <td>
               <div class="btn-group" role="group" aria-label="Basic example">
-                  <a href="{{ URL::to('tasks/' . $client->id . '/edit') }}">
+                  <a href="{{ URL::to('client/' . $client ?? ''->id . '/edit') }}">
                     <button type="button" class="btn btn-warning">Edit</button>
                   </a>&nbsp;
-                  <form action="{{url('tasks', [$client->id])}}" method="POST">
+                  <form action="{{url('client', [$client ?? ''->id])}}" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <input type="submit" class="btn btn-danger" value="Delete"/>

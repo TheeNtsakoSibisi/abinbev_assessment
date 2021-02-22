@@ -41,10 +41,10 @@ class ClientController extends Controller
         //Validate
         $request->validate([
             'name' => 'required|min:3',
-            'city_id.name' => 'required',
+            'city_id' => 'required',
         ]);
         
-        $clients = Task::create(['name' => $request->name,'city_id.name' => $request->city]);
+        $clients = Task::create(['name' => $request->name,'city_id' => $request->city]);
         return redirect('/client/'.$client->id);
     }
 
@@ -56,7 +56,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-         
+         return view('client.show',compact('client',$client));
     }
 
     /**
@@ -67,7 +67,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('client.edit',compact('client',$client));
     }
 
     /**
@@ -79,7 +79,17 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        //Validate
+        $request->validate([
+            'name' => 'required|min:3',
+            'city_id' => 'required',
+        ]);
+        
+        $client->name = $request->name;
+        $client->city_id = $request->city_id;
+        $client->save();
+        $request->session()->flash('message', 'Successfully modified the Client!');
+        return redirect('client');
     }
 
     /**
@@ -90,6 +100,8 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        $request->session()->flash('message', 'Successfully deleted the client!');
+        return redirect('client');
     }
 }
