@@ -1282,6 +1282,52 @@
         ]
     },
     {
+        "name": "laravel-frontend-presets/now-ui-dashboard",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel-frontend-presets/now-ui-dashboard.git",
+            "reference": "41b7447604078ebe3a49fa745a5adf4e908ab077"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel-frontend-presets/now-ui-dashboard/zipball/41b7447604078ebe3a49fa745a5adf4e908ab077",
+            "reference": "41b7447604078ebe3a49fa745a5adf4e908ab077",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "^8.0",
+            "laravel/legacy-factories": "^1.0"
+        },
+        "time": "2020-09-21T11:42:07+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "LaravelFrontendPresets\\NowUiPreset\\NowUiPresetServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LaravelFrontendPresets\\NowUiPreset\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Laravel 5.x Front-end preset for now ui dashboard",
+        "homepage": "https://github.com/creativetimofficial/now-ui-dashboard-laravel",
+        "keywords": [
+            "Now UI",
+            "laravel",
+            "preset"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v8.28.1",
         "version_normalized": "8.28.1.0",
@@ -1448,6 +1494,60 @@
         ]
     },
     {
+        "name": "laravel/legacy-factories",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/legacy-factories.git",
+            "reference": "5e3fe2fd5fda64e20ea5c74c831a7346294e902a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/5e3fe2fd5fda64e20ea5c74c831a7346294e902a",
+            "reference": "5e3fe2fd5fda64e20ea5c74c831a7346294e902a",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/macroable": "^8.0",
+            "php": "^7.3|^8.0",
+            "symfony/finder": "^3.4|^4.0|^5.0"
+        },
+        "time": "2020-10-27T14:25:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Illuminate\\Database\\Eloquent\\LegacyFactoryServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "helpers.php"
+            ],
+            "psr-4": {
+                "Illuminate\\Database\\Eloquent\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The legacy version of the Laravel Eloquent factories.",
+        "homepage": "http://laravel.com"
+    },
+    {
         "name": "laravel/sail",
         "version": "v1.3.1",
         "version_normalized": "1.3.1.0",
@@ -1568,6 +1668,62 @@
             "Tinker",
             "laravel",
             "psysh"
+        ]
+    },
+    {
+        "name": "laravel/ui",
+        "version": "v3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/ui.git",
+            "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/ui/zipball/a1f82c6283c8373ea1958b8a27c3d5c98cade351",
+            "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "^8.0",
+            "illuminate/filesystem": "^8.0",
+            "illuminate/support": "^8.0",
+            "php": "^7.3|^8.0"
+        },
+        "time": "2021-01-06T19:20:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Laravel\\Ui\\UiServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Ui\\": "src/",
+                "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Laravel UI utilities and presets.",
+        "keywords": [
+            "laravel",
+            "ui"
         ]
     },
     {
